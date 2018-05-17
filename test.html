@@ -5,6 +5,9 @@
   </head>
   <body>
     <p id="timer"></p>
+    <input type="button" class="stop-timer" value="Stop" onclick="timer.pauseTimer();" />
+    <input type="button" class="resume-timer" value="Resume" onclick="timer.startTimer();" />
+    <input type="button" class="restart-timer" value="Restart" onclick="timer.resetTimer();" />
     <script src="js/Timer.js" type="text/javascript"></script>
     <script src="js/Label.js" type="text/javascript"></script>
     <script type="text/javascript">

@@ -7,9 +7,51 @@ function Timer() {
   this.seconds = 0;
   this.minutes = 0;
   this.hours = 0;
+  this.runningInterval = null;
   
   this.startTimer = function() {
-    setInterval(self.runningTimer, 1000);
+    
+    if(self.runningInterval == null) {
+      
+      self.runningInterval = setInterval(self.runningTimer, 1000);
+      
+    }
+    
+  };
+  
+  this.pauseTimer = function() {
+    
+    if(self.runningInterval != null) {
+      
+      clearInterval(self.runningInterval);
+      self.runningInterval = null;
+      
+    }
+    
+  };
+  
+  this.resetTimer = function() {
+    
+    var runAgain = false;
+    
+    if(self.runningInterval != null) {
+      
+      self.pauseTimer();
+      runAgain = true;
+      
+    }
+    
+    self.seconds = 0;
+    self.minutes = 0;
+    self.hours = 0;
+    self.notify();
+    
+    if(runAgain) {
+      
+      self.startTimer();
+      
+    }
+    
   };
   
   this.registerObserver = function(observer) {
