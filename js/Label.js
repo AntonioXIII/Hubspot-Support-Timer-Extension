@@ -4,7 +4,10 @@ function Label() {
   this.timerLabel = document.getElementById('timer');
   
   this.update = function(timer) {
-    self.timerLabel.innerHTML = 'New text!';
-    console.log('I updated!');
+    
+    var timerText = timer.hours + ':' + ('0' + timer.minutes).slice(-2) + ':' 
+      + ('0' + timer.seconds).slice(-2);
+    self.timerLabel.innerHTML = timerText;
+    
   };
 }
