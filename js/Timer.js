@@ -8,12 +8,14 @@ function Timer() {
   this.minutes = 0;
   this.hours = 0;
   this.runningInterval = null;
+  this.paused = true;
   
   this.startTimer = function() {
     
     if(self.runningInterval == null) {
       
       self.runningInterval = setInterval(self.runningTimer, 1000);
+      self.paused = false;
       
     }
     
@@ -25,6 +27,7 @@ function Timer() {
       
       clearInterval(self.runningInterval);
       self.runningInterval = null;
+      self.paused = true;
       
     }
     

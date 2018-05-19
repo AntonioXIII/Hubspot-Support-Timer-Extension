@@ -8,11 +8,15 @@
     <input type="button" class="stop-timer" value="Stop" />
     <input type="button" class="resume-timer" value="Resume" />
     <input type="button" class="restart-timer" value="Restart" />
+    <div class="pause-play-timer">Play</div>
     <script src="js/Timer.js" type="text/javascript"></script>
     <script src="js/Label.js" type="text/javascript"></script>
     <script src="js/PauseButton.js" type="text/javascript"></script>
     <script src="js/PlayButton.js" type="text/javascript"></script>
     <script src="js/ResetButton.js" type="text/javascript"></script>
+    <script src="js/PausePlayButton.js" type="text/javascript"></script>
+    <script src="js/PausePlayStrategy.js" type="text/javascript"></script>
+    <script src="js/PausePlayDivStrategy.js" type="text/javascript"></script>
     <script type="text/javascript">
       var timer = new Timer();
       var label = new Label();
@@ -22,6 +26,11 @@
         document.getElementsByClassName('resume-timer')[0]);
       var resetBtn = new ResetButton(timer, 
         document.getElementsByClassName('restart-timer')[0]);
+      var pausePlayBtn = new PausePlayButton(timer, 
+        document.getElementsByClassName('pause-play-timer')[0], 
+        new PausePlayDivStrategy(timer, 
+          document.getElementsByClassName('pause-play-timer')[0], 'Pause', 
+          'Play'));
       
       timer.registerObserver(label);
       timer.startTimer();
