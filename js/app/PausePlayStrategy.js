@@ -1,3 +1,9 @@
+/**
+ * A class that defines an implementation of how to handle toggling between
+ * the pause and play states of a PausePlayButton.
+ *
+ * @constructor
+ */
 function PausePlayStrategy(timer, btn, playContent, pauseContent) {
   
   var self = this;

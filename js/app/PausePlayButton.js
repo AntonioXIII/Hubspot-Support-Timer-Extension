@@ -1,3 +1,11 @@
+/**
+ * A button object that can double as a play and pause button. What operation
+ * is available depends on the status of the timer. If the timer is running,
+ * the button will pause the timer. Otherwise, the button will start playing
+ * the timer. The specifics of how this is determined and how the button gets
+ * updated are specified in a PausePlayStrategy object.
+ * @constructor
+ */
 function PausePlayButton(timer, btn, pausePlayStrategy) {
   
   var self = this;

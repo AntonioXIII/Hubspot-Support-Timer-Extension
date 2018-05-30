@@ -1,3 +1,7 @@
+/**
+ * A pause button object that pauses a timer when clicked.
+ * @constructor
+ */
 function PauseButton(timer, btn) {
   
   var self = this;

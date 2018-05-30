@@ -1,3 +1,9 @@
+/**
+ * A label object for displaying the time from a timer. The object does this
+ * by becoming an observer of a timer, and then having its update method 
+ * called everytime the timer updates.
+ * @contstrutor
+ */
 function Label() {
   
   var self = this;
