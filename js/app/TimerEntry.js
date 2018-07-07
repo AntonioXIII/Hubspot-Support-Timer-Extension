@@ -4,18 +4,40 @@
  * the information along via a HubSpot API request.
  @constructor
  */
- function TimerEntry(title) {
+ function TimerEntry(title, id) {
 
   var self = this;
   this.timer = new Timer();
-  this.title = title;
+  
+  // Check to make sure variables were set. If not, provide a default value.
+  if(title != null) {
+    
+    this.title = title;
+    
+  }
+  else {
+    
+    this.title = 'Default Title';
+    
+  }
+  
+  if(id != null) {
+    
+    this.id = id;
+    
+  }
+  else {
+    
+    this.id = 0;
+    
+  }
   
   /**
    * Returns the HTML structure of this timer in a templated string.
    */
   this.getTimerHTML = function() {
     
-    return `<section class="timer">  
+    return `<section id="timer-${self.id}" class="timer">  
               <header class="timer-header">  
                 <h2>${self.title}</h2> 
               </header> 

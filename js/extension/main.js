@@ -7,7 +7,7 @@ $(document).ready(function(){
 
   $('#add-timer').click(function(){
     
-    var newTimer = new TimerEntry('Title');
+    var newTimer = new TimerEntry('Title', timeEntries.length);
     
     timeEntries.push(newTimer);
     $('#app-content').append(newTimer.getTimerHTML());
