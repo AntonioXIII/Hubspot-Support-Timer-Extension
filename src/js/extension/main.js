@@ -4,10 +4,11 @@
 $(document).ready(function(){
   
   var timeEntries = [];
+  var appLib = chrome.extension.getBackgroundPage().SupportTimerExtensionLib;
 
   $('#add-timer').click(function(){
     
-    var newTimer = new TimerEntry('Title', timeEntries.length);
+    var newTimer = new appLib.TimerEntry('Title', timeEntries.length);
     
     timeEntries.push(newTimer);
     $('#app-content').append(newTimer.getTimerHTML());
