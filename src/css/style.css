@@ -1,0 +1,42 @@
+/* App Styles */
+#app-wrapper {
+  width: 500px;
+  height: auto;
+}
+
+#app-header {
+  background-color: #36495A;
+  color: white;
+  padding: 10px 5px;
+}
+
+#app-header h1 {
+  font-size: 2.25em;
+  margin: 0px;
+}
+
+/* Timer styles */
+.timer {
+  background: #ff715b;
+  background: -webkit-linear-gradient(-45deg, #ff715b 0%,#ffab99 100%); 
+  background: linear-gradient(135deg, #ff715b 0%,#ffab99 100%); 
+}
+
+.timer .timer-header h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 10px;
+  background-color: #36495A;
+  color: white;
+  font-size: 1.5em;
+}
+
+.timer .timer-entry input {
+  background-color: transparent;
+  cursor: default;
+  border: none;
+  width: auto;
+  max-width: 40px;
+  font-size: 22px;
+  display: inline;
+}
