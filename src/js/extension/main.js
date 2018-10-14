@@ -9,7 +9,19 @@
   
   function addTimeEntry(timeEntry) {
     
+    var entrySelector = '#timer-' + timeEntry.id;
+    var playPauseButton = '';
+    
     $('#app-content').append(timeEntry.getTimerHTML());
+    
+    playPauseButton = new appLib.PausePlayButton(timeEntry.timer, 
+      $(entrySelector).find('.play-pause-btn')[0], 
+      new appLib.PausePlayBtnStrategy(timeEntry.timer, 
+        $(entrySelector).find('.play-pause-btn')[0], 'Pause', 'Play'));
+    
+    timeEntry.setLabel('second', 
+      document.querySelector(entrySelector + ' .timer-second'));
+    
     timeEntries.push(timeEntry);
     
   }

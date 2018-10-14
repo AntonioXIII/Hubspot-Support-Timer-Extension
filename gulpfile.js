@@ -15,6 +15,7 @@ function createJSLibDist() {
   return gulp.src(['./src/js/app/Label.js', './src/js/app/PauseButton.js', 
           './src/js/app/PausePlayButton.js', './src/js/app/PausePlayStrategy.js', 
           './src/js/app/PausePlayDivStrategy.js',
+          './src/js/app/PausePlayBtnStrategy.js',
           './src/js/app/PlayButton.js', 
           './src/js/app/ResetButton.js',
           './src/js/app/Timer.js',

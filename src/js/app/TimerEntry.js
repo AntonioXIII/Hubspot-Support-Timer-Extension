@@ -12,6 +12,7 @@
   
     var self = this;
     this.timer = new extLib.Timer();
+    this.secondLabel = '';
     
     // Check to make sure variables were set. If not, provide a default value.
     if(title != null) {
@@ -47,14 +48,11 @@
                 </header> 
                 <section class="timer-info"> 
                   <section class="timer-entry">  
-                    <input type="text" class="timer-hour" 
-                      value="${self.timer.hours}" /> 
+                    <span class="timer-hour">${self.timer.hours}</span>
                     <span class="timerColon">:</span> 
-                    <input type="text" class="timer-minute" 
-                      value="${self.timer.minutes}" /> 
+                    <span class="timer-minute">${self.timer.minutes}</span>
                     <span class="timerColon">:</span>  
-                    <input type="text" class="timer-second" 
-                      value="${self.timer.seconds}" /> 
+                    <span class="timer-second">${self.timer.seconds}</span>
                   </section>  
                   <section class="timer-btns"> 
                     <button class="play-pause-btn">Play</button> 
@@ -71,6 +69,18 @@
                   <button class="timer-submit">Submit</button>  
                 </section>
               </section>`;
+      
+    };
+    
+    // Set a UI label for the timer
+    this.setLabel = function(purpose, newLabelWrapper) {
+      
+      if(purpose == 'second') {
+        
+        self.secondLabel = new extLib.Label(newLabelWrapper, purpose);
+        self.timer.registerObserver(self.secondLabel);
+        
+      }
       
     };
   

@@ -22,6 +22,43 @@
     };
   }
   
+  /**
+   * Overloaded constructor for creating a specialized label only for 
+   * hour, minutes or seconds.
+   * @constructor
+   */
+  extLib.Label = function(labelElement, purpose) {
+    
+    var self = this;
+    this.timerLabel = labelElement;
+    this.purpose = purpose;
+    
+    this.update = function(timer) {
+      
+      var updateVal = 0;
+      
+      if(purpose == 'hour') {
+        
+        updateVal = timer.hours;
+        
+      }
+      else if(purpose == 'minute') {
+        
+        updateVal = timer.minutes;
+        
+      }
+      else {
+        
+        updateVal = timer.seconds;
+        
+      }
+      
+      self.timerLabel.innerHTML = updateVal;
+      
+    };
+    
+  }
+  
   // Declare namespace, or use it if it already exists
   if(typeof window.SupportTimerExtensionLib == 'undefined') {
     
