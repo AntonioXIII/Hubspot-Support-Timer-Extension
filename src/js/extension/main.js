@@ -19,8 +19,13 @@
       new appLib.PausePlayBtnStrategy(timeEntry.timer, 
         $(entrySelector).find('.play-pause-btn')[0], 'Pause', 'Play'));
     
+    // Set labels
     timeEntry.setLabel('second', 
       document.querySelector(entrySelector + ' .timer-second'));
+    timeEntry.setLabel('minute', 
+      document.querySelector(entrySelector + ' .timer-minute'));
+    timeEntry.setLabel('hour', 
+      document.querySelector(entrySelector + ' .timer-hour'));
     
     timeEntries.push(timeEntry);
     

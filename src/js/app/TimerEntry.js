@@ -13,6 +13,8 @@
     var self = this;
     this.timer = new extLib.Timer();
     this.secondLabel = '';
+    this.minuteLabel = '';
+    this.hourLabel = '';
     
     // Check to make sure variables were set. If not, provide a default value.
     if(title != null) {
@@ -79,6 +81,18 @@
         
         self.secondLabel = new extLib.Label(newLabelWrapper, purpose);
         self.timer.registerObserver(self.secondLabel);
+        
+      }
+      else if(purpose == 'minute') {
+        
+        self.minuteLabel = new extLib.Label(newLabelWrapper, purpose);
+        self.timer.registerObserver(self.minuteLabel);
+        
+      }
+      else if(purpose == 'hour') {
+        
+        self.hourLabel = new extLib.Label(newLabelWrapper, purpose);
+        self.timer.registerObserver(self.hourLabel);
         
       }
       
