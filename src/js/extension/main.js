@@ -11,13 +11,37 @@
     
     var entrySelector = '#timer-' + timeEntry.id;
     var playPauseButton = '';
+    var resetButton = '';
     
     $('#app-content').append(timeEntry.getTimerHTML());
     
+    // Setup for buttons
     playPauseButton = new appLib.PausePlayButton(timeEntry.timer, 
       $(entrySelector).find('.play-pause-btn')[0], 
       new appLib.PausePlayBtnStrategy(timeEntry.timer, 
         $(entrySelector).find('.play-pause-btn')[0], 'Pause', 'Play'));
+    
+    resetButton = new appLib.ResetButton(timeEntry.timer,
+      $(entrySelector).find('.reset-btn')[0]);
+    
+    $(entrySelector).find('.delete-btn').click(function(){
+      
+      if(confirm('Are you sure you want to delete this entry?')) {
+        
+        $(entrySelector).remove();
+        timeEntries.forEach(function(element, index){
+          
+          if(element.id == timeEntry.id) {
+            
+            timeEntries.splice(index, 1);
+            
+          }
+          
+        });
+        
+      }
+      
+    });
     
     // Set labels
     timeEntry.setLabel('second', 
