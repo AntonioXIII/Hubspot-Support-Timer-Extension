@@ -52,9 +52,13 @@
                   <section class="timer-entry">  
                     <span class="timer-hour">${self.timer.hours}</span>
                     <span class="timerColon">:</span> 
-                    <span class="timer-minute">${self.timer.minutes}</span>
+                    <span class="timer-minute">
+                      ${('0' + self.timer.minutes).slice(-2)}
+                    </span>
                     <span class="timerColon">:</span>  
-                    <span class="timer-second">${self.timer.seconds}</span>
+                    <span class="timer-second">
+                      ${('0' + self.timer.seconds).slice(-2)}
+                    </span>
                   </section>  
                   <section class="timer-btns"> 
                     <button class="play-pause-btn">Play</button> 

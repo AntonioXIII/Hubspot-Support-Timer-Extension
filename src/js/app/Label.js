@@ -44,12 +44,12 @@
       }
       else if(purpose == 'minute') {
         
-        updateVal = timer.minutes;
+        updateVal = ('0' + timer.minutes).slice(-2);
         
       }
       else {
         
-        updateVal = timer.seconds;
+        updateVal = ('0' + timer.seconds).slice(-2);
         
       }
       
